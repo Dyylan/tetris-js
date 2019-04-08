@@ -1,0 +1,42 @@
+
+td {
+    height: 10px;
+    width: 10px;
+    border: 1px solid rgba(1, 1, 1, 0.3); 
+}
+   
+table {
+    border: 1px solid rgba(1, 1, 1, 1);
+}
+
+.tetromino-0 {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tetromino-1 {
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.tetromino-2 {
+    background-color: rgba(255, 255, 0, 0.8);
+}
+
+.tetromino-3 {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+
+.tetromino-4 {
+    background-color: rgba(0, 0, 255, 0.8);
+}
+
+.tetromino-5 {
+    background-color: rgba(255, 123, 0, 0.8);
+}
+
+.tetromino-6 {
+    background-color: rgba(0, 255, 0, 0.8);
+}
+
+.tetromino-7 {
+    background-color: rgba(255, 0, 0, 0.8);    
+}
