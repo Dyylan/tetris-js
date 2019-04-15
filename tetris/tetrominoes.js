@@ -138,28 +138,45 @@ const tetrominoesEnum = {
 */
 class Tetromino {
     // Constructor 
-    constructor(tetrominoType) {
+    constructor(tetrominoType, position) {
         this.tetrominoType = tetrominoType;
         this.tetromino = tetrominoesEnum[tetrominoType];
         this.size = this.tetromino.SIZE;
-        this.position = 0;        
-        this.array = this.toArray();
+        this.position = position;
+        this.nextPosition = position;
+        this.rotation = 0;
+        this.nextRotation = 0;   
     }
     
     // Getters 
+    get array() {
+        return this.tetromino.BLOCKS[this.rotation]
+    }
+
+    get rotatedArray() {
+        return this.tetromino.BLOCKS[this.nextRotation] 
+    }
 
     // Setters
 
     // Methods
+    setPosition() {
+        this.position = this.nextPosition;
+    }
+
+    setRotation() {
+        this.rotation = this.nextRotation;
+    }
+
+    addToPosition(move) {
+        this.nextPosition = [this.position[0]+move[0], this.position[1]+move[1]];
+    }
+
     rotateRight() {
-        this.position = (this.position + 1) % 4;
+        this.nextRotation = (this.rotation + 1) % 4;
     }
 
     rotateLeft() {
-        this.position = (this.position + 3) % 4;
-    }
-
-    toArray() {
-        return this.tetromino.BLOCKS[this.position]
+        this.nextRotation = (this.rotation + 3) % 4;
     }
 }
